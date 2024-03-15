@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterDetail: View {
+struct CharacterDetailPage: View {
     @Environment(ModelData.self) var modelData
     var character: Character
     
@@ -20,7 +20,6 @@ struct CharacterDetail: View {
         
         VStack {
             Spacer()
-            
             character.image
                 .resizable()
                 .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100)
@@ -54,6 +53,6 @@ struct CharacterDetail: View {
 }
 
 #Preview {
-    CharacterDetail(character: ModelData().characters[0])
+    CharacterDetailPage(character: ModelData().characters[0])
         .environment(ModelData())
 }

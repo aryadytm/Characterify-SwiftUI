@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Splash: View {
+struct SplashPage: View {
     var body: some View {
         VStack {
             Image("logo")
@@ -25,5 +25,5 @@ struct Splash: View {
 }
 
 #Preview {
-    Splash()
+    SplashPage()
 }

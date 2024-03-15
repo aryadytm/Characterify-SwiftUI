@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterCategoryHome: View {
+struct ExplorePage: View {
     @Environment(ModelData.self) var modelData
     
     var body: some View {
@@ -22,6 +22,10 @@ struct CharacterCategoryHome: View {
                     .buttonStyle(PlainButtonStyle())
 
                     VStack(alignment: .leading) {
+                        Text("Featured")
+                            .font(.body)
+                            .fontWeight(.bold)
+                        
                         modelData.featuredCharacter.image
                             .renderingMode(.original)
                             .resizable()
@@ -29,7 +33,6 @@ struct CharacterCategoryHome: View {
                             .frame(height: 200)
                             .clipped()
                             .cornerRadius(12)
-                            .padding(.top, 8)
                         
                         Text(modelData.featuredCharacter.name)
                             .font(.caption)
@@ -50,7 +53,7 @@ struct CharacterCategoryHome: View {
                 
                 Text("")
             }
-                .navigationTitle("Featured")
+                .navigationTitle("Explore")
                 
         } detail: {
             Text("Select a Character")
@@ -59,6 +62,6 @@ struct CharacterCategoryHome: View {
 }
 
 #Preview {
-    CharacterCategoryHome()
+    ExplorePage()
         .environment(ModelData())
 }

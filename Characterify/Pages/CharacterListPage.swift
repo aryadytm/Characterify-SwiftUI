@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterList: View {
+struct CharacterListPage: View {
     @Environment(ModelData.self) var modelData
     @State private var showFavoritesOnly: Bool = false
     
@@ -21,6 +21,8 @@ struct CharacterList: View {
         
         NavigationSplitView {
             List {
+                Button("Add Character") {
+                }
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Show favorites only")
                 }
@@ -32,7 +34,7 @@ struct CharacterList: View {
                     }
                 }
             }
-            .navigationTitle("Characters")
+            .navigationTitle("My Characters")
         } detail: {
             Text("Select a Character")
         }
@@ -41,6 +43,6 @@ struct CharacterList: View {
 }
 
 #Preview {
-    CharacterList()
+    CharacterListPage()
         .environment(ModelData())
 }
